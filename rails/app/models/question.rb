@@ -2,7 +2,7 @@ require 'numbers_in_words'
 require 'numbers_in_words/duck_punch'
 
 class Question < ActiveRecord::Base
-
+  include Bootsy::Container
   validates_presence_of :question
   validates_presence_of :answer
 
