@@ -28,7 +28,7 @@ class QuestionsController < ApplicationController
 
   def answer
     find_question
-    @correctAnswer = @question.is_correct?(params[:answer][:answer])
+    @tempAnswer = @question.is_correct?(params[:answer][:answer])
   end
 
   private
@@ -38,6 +38,6 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:question, :answer)
+    params.require(:question).permit(:question, :answer, :bootsy_image_gallery_id)
   end
 end
