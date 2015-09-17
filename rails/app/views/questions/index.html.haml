@@ -1,12 +1,19 @@
 .container
-  %h1 Choose a question!
+  .container{:style => "text-align: right"}
+    = link_to "Add a new question", new_question_path, class: "btn btn-primary"
 
-  .well
-    %ul
-      - @questions.each do |question|
-        %li
+
+  %table.table
+    %tr
+      %th
+        Question
+      %th
+        Edit
+    - @questions.each do |question|
+      %tr
+        %td
           = link_to question.question.html_safe, question
-          %span.small
-            (#{link_to "edit", edit_question_path(question)})
+        %td
+          (#{link_to "edit", edit_question_path(question)})
 
-  = link_to "Add a new question", new_question_path
+  
