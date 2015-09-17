@@ -34,6 +34,8 @@ gem 'numbers_in_words'
 
 gem 'bootsy'
 
+gem 'capybara'
+
 group :development, :test do
   gem 'rspec-rails'
 end
