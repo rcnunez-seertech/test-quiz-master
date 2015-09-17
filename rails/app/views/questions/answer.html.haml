@@ -1,0 +1,17 @@
+.container
+
+  - if @correctAnswer
+    .panel.panel-success
+      .panel-heading
+        %h3.panel-title Congratulations! Your answer is correct!
+      
+  - else
+    .panel.panel-danger
+      .panel-heading
+        %h3.panel-title Sorry! Your answer is incorrect.
+
+  
+  %h1 #{raw(@question.question)}
+  %hr    
+  .container{ :style => "text-align:right" }
+    %h7 #{@question.answer}
